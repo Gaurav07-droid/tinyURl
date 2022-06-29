@@ -26,6 +26,14 @@ app.use(compression());
 app.use("/api", urlRoutes);
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`your server is running at ${port}..`);
+});
+
+process.on("unhandledRejection", (err) => {
+  console.log("unhandled rejection 💥 !shuting down");
+
+  server.close(() => {
+    process.exit(1);
+  });
 });
