@@ -23,9 +23,10 @@ app.use("/js", express.static("./js/"));
 app.use(express.urlencoded({ extended: false }));
 app.use(compression());
 
-app.use("/api", urlRoutes);
+app.use("/", urlRoutes);
 
 const port = process.env.PORT || 5000;
+console.log(process.env.PORT);
 const server = app.listen(port, () => {
   console.log(`your server is running at ${port}..`);
 });

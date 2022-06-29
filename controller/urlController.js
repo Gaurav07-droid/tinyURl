@@ -5,7 +5,7 @@ exports.createShortUrl = async (req, res, next) => {
     full: req.body.fullUrl,
   });
 
-  res.redirect("/api");
+  res.redirect("/");
 };
 
 exports.getOverview = async (req, res, next) => {
@@ -30,5 +30,5 @@ exports.deleteUrl = async (req, res, next) => {
     { $set: { active: false } }
   );
 
-  if (deleted !== null) return res.redirect("/api");
+  if (deleted !== null) return res.redirect("/");
 };

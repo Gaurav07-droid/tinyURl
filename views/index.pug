@@ -9,7 +9,7 @@ html(lang="en")
     body(class="mt-5")
         h1(class="mx-auto d-grid gap-3 p-3 mb-2" style="width:200px") Shortler
         .container(class="p-2 bg-light border mt-3")
-            form(action="/api/shortUrl", method="post", class="my-4 row row-cols-lg-auto g-3 align-items-center")
+            form(action="/shortUrl", method="post", class="my-4 row row-cols-lg-auto g-3 align-items-center")
                 label(for="fullUrl" class="sr-only") URL
                 input#fullUrl(required,type="url",name="fullUrl",placeholder="Your url here.." class="form-control" style="width:1000px" )
                 button(type="submit" class="btn btn-primary ms-2") Short
@@ -25,8 +25,8 @@ html(lang="en")
                                 td
                                     a(href= `${url.full}`)= url.full 
                                 td
-                                    a(href= `/api/${url.short}` class="link-success" target="_blank")= url.short
+                                    a(href= `/${url.short}` class="link-success" target="_blank")= url.short
                                 td(class="text-primary")= url.clicks
                                 td
-                                    a(class="btn btn-danger" href=`/api/delete/${url.id}`) delete
+                                    a(class="btn btn-danger" href=`/delete/${url.id}`) delete
 
