@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const compression = require("compression");
 const urlRoutes = require("./routes/urlRoutes");
 const app = express();
 
@@ -20,6 +21,7 @@ app.set("view engine", "pug");
 app.use("/js", express.static("./js/"));
 
 app.use(express.urlencoded({ extended: false }));
+app.use(compression());
 
 app.use("/api", urlRoutes);
 
