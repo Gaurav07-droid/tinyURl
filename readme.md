@@ -1,3 +1,3 @@
 # Shortler
 
-Url shortner made using nodejs,express and more.
+Url shortner made using nodejs,express,mongoDB.
